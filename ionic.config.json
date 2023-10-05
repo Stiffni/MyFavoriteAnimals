@@ -1,0 +1,7 @@
+{
+  "name": "MyFavoriteAnimals",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,9 @@
+<ion-card>
+  <img alt="Silhouette of mountains" src={{imageUrl}} />
+  <ion-card-header>
+    <ion-card-title>{{animalName}}</ion-card-title>
+    <ion-button aria-label="Favorite" fill="clear" (click)="onFavouriteClick()">
+      <ion-icon slot="icon-only" [name]="(isFavourite$ | async) ? 'heart' : 'heart-outline'"></ion-icon>
+    </ion-button>
+  </ion-card-header>
+</ion-card>

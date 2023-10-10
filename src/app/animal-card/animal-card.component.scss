@@ -1,0 +1,24 @@
+@import '../../global';
+
+ion-card {
+    border-radius: 2px;
+}
+
+ion-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    ion-card {
+        width: 250px;
+    }
+}

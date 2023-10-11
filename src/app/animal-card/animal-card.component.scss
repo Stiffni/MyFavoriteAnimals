@@ -1,9 +1,5 @@
 @import '../../global';
 
-ion-card {
-    border-radius: 2px;
-}
-
 ion-card-header {
     display: flex;
     flex-direction: row;
@@ -15,6 +11,10 @@ img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+}
+
+button {
+    background: none;
 }
 
 @media screen and (min-width: $mobile-breakpoint) {

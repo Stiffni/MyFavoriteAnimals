@@ -26,3 +26,7 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 $mobile-breakpoint: '576px';
+
+ion-card {
+    border-radius: 2px;
+}

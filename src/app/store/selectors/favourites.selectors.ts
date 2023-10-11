@@ -1,11 +1,15 @@
-import {
-  createSelector,
-  createFeatureSelector,
-  props,
-  select,
-} from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { AnimalsAppState } from '../reducers/favourites.reducer';
-import { pipe } from 'rxjs';
+import { Animal } from 'types';
+
+const animalPlaceholder: Animal = {
+  Name: '',
+  Food: {
+    Likes: [],
+    Dislikes: [],
+  },
+  Image: '',
+};
 
 const selectAnimalsFeature =
   createFeatureSelector<AnimalsAppState>('animalsApp');
@@ -13,7 +17,6 @@ const selectAnimalsFeature =
 export const selectFavourites = createSelector(
   selectAnimalsFeature,
   (state: AnimalsAppState) => {
-    console.log(state);
     return state.favourites;
   }
 );
@@ -21,8 +24,14 @@ export const selectFavourites = createSelector(
 export const selectAnimals = createSelector(
   selectAnimalsFeature,
   (state: AnimalsAppState) => {
-    console.log(state);
     return state.animals;
+  }
+);
+
+export const selectedAnimal = createSelector(
+  selectAnimalsFeature,
+  (state: AnimalsAppState) => {
+    return state.selectedAnimal;
   }
 );
 
@@ -42,5 +51,14 @@ export const allFavouriteAnimals = createSelector(
   selectFavourites,
   (animals, favourites) => {
     return animals.filter((animal) => favourites.includes(animal.Name));
+  }
+);
+
+export const animalDetails = createSelector(
+  selectAnimals,
+  selectedAnimal,
+  (animals, selection) => {
+    const animal = animals.find((animal) => selection === animal.Name);
+    return animal || animalPlaceholder;
   }
 );

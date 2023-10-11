@@ -1,0 +1,26 @@
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+ion-card {
+    width: fit-content;
+    padding: 15px;
+}
+
+ion-list-header {
+    padding: 0;
+}
+
+.details-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.list-wrapper {
+    display: flex;
+    gap: 40px;
+}

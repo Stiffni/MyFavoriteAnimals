@@ -5,6 +5,12 @@ img {
     border-radius: 50%;
 }
 
+ion-card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 ion-card {
     width: fit-content;
     padding: 15px;
